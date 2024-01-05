@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Jost:wght@300;400;700&family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background: #444;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.box {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    transform-style: preserve-3d;
+}
+
+.box div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: animate 26s linear infinite;
+
+}
+
+@keyframes animate {
+    0% {
+        transform: perspective(1000px) rotateX(0deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(360deg);
+    }
+}
+
+.box div span {
+    position: absolute;
+    inset: 0;
+    transform: rotateX(calc(var(--i) * 15deg));
+}
+
+.box div span::before {
+    /* content:'▬▬ι═══════ﺤ'; */
+    content: "Uzer.Qureshi";
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #00aaff98;
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 700;
+    -webkit-text-stroke: 0.5px #000;
+    text-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.box div span:nth-child(3n+2)::before {
+    color: rgba(0, 51, 255, 0.53);
+
+}
+
+.box div span:nth-child(3n+3)::before {
+    color: rgb(183, 235, 255);
+}
